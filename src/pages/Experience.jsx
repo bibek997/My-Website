@@ -1,8 +1,8 @@
 import React from 'react'
-import { Plus, Pencil } from 'lucide-react'
 
 const Experience = () => {
-  const experiences = [
+  // 1. Professional Experience Data
+  const professionalExperiences = [
     {
       role: "Graphic Designer",
       company: "PCPS College",
@@ -41,65 +41,136 @@ const Experience = () => {
     },
   ]
 
-  return (
-    <section id="experience" className="w-full border-t border-gray-100 bg-white">
-      <div className="max-w-325 mx-auto px-6 md:px-12 py-24 font-sans">
-        
-        {/* Section Header */}
-        <div className="flex items-center justify-between mb-8 pb-4 border-b border-gray-100">
-          <h2 className="text-4xl font-bold text-black">Experience</h2>
-          <div className="flex items-center gap-3 text-gray-500">
-            <button className="p-1.5 hover:bg-gray-100 rounded-md transition-colors">
-              <Plus size={20} />
-            </button>
-            <button className="p-1.5 hover:bg-gray-100 rounded-md transition-colors">
-              <Pencil size={18} />
-            </button>
+  // 2. Leadership & Activities Data
+  const leadershipRoles = [
+    {
+      role: "Music & Art Club Manager",
+      company: "PCPS College",
+      date: "2024-2025",
+      duration: "",
+      location: "Lalitpur District, Nepal",
+      description: "Led the club's creative team, organized major college events (including ClockMakers with 50+ participants), and managed music and art activities across the campus.",
+      logo: "src/assets/pcpsollegelogo.png",
+    },
+  ]
+
+  // 3. Image Array for Gallery
+  const collegeMoments = [
+    "src/assets/college/1-283.JPG",
+    "src/assets/college/annualday.png",
+    "src/assets/college/chinesenewyear.jpg",
+    "src/assets/college/DSCN4027.JPG",
+    "src/assets/college/DSCN5564.JPG",
+    "src/assets/college/holi.png",
+    "src/assets/college/holi2.png",
+    "src/assets/college/image copy.png",
+    "src/assets/college/image.png",
+    "src/assets/college/IMG_0828.jpg",
+    "src/assets/college/IMG_2911.JPG",
+    "src/assets/college/IMG_3167.JPG",
+    "src/assets/college/IMG_4044.JPG",
+    "src/assets/college/IMG_20230726_182755.jpg",
+    "src/assets/college/IMG-20250204-WA0008.jpg",
+    "src/assets/college/IMG-20250313-WA0126.jpg",
+  ]
+
+  // Reusable component for rendering the list
+  const ExperienceList = ({ items }) => (
+    <div className="flex flex-col gap-2">
+      {items.map((exp, index) => (
+        <div 
+          key={index} 
+          // Increased py-6 to py-8 and px-4 to px-6 for better breathing room
+          className="flex gap-5 py-8 border-b border-gray-100 last:border-0 hover:bg-gray-50/80 transition-all duration-200 px-6 -mx-6 rounded-xl"
+        >
+          {/* Logo */}
+          <div className="w-14 h-14 shrink-0 flex items-center justify-center bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+            {exp.logo ? (
+              <img src={exp.logo} alt={exp.company} className="w-full h-full object-contain p-1.5" />
+            ) : (
+              <span className="text-lg font-bold text-gray-400">{exp.company.charAt(0)}</span>
+            )}
+          </div>
+
+          {/* Content */}
+          <div className="flex flex-col w-full">
+            <h3 className="text-xl font-bold text-black leading-tight">{exp.role}</h3>
+            <p className="text-[15px] font-medium text-gray-800 mt-1">{exp.company}</p>
+            <p className="text-[13px] text-gray-500 mt-1">
+              {exp.date} {exp.duration && `· ${exp.duration}`}
+            </p>
+            <p className="text-[13px] text-gray-500 mt-0.5 mb-3">{exp.location}</p>
+            <p className="text-[14px] text-gray-600 leading-relaxed">{exp.description}</p>
           </div>
         </div>
+      ))}
+    </div>
+  )
 
-        {/* Experience List Container */}
-        <div className="flex flex-col">
-          {experiences.map((exp, index) => (
-            <div 
-              key={index} 
-              className="flex gap-4 py-6 border-b border-gray-100 last:border-0 hover:bg-gray-50/80 transition-all duration-200 px-4 -mx-4 rounded-xl"
-            >
-              
-              {/* Logo / Icon */}
-              <div className="w-12 h-12 shrink-0 flex items-center justify-center bg-white border border-gray-200 rounded overflow-hidden shadow-sm">
-                {exp.logo ? (
-                  <img src={exp.logo} alt={exp.company} className="w-full h-full object-contain p-1" />
-                ) : (
-                  <span className="text-lg font-bold text-gray-400">{exp.company.charAt(0)}</span>
-                )}
-              </div>
+  return (
+    <section id="experience" className="w-full border-t border-gray-100 bg-white overflow-hidden">
+      {/* Changed pt-24 pb-12 to py-24 for uniform vertical spacing */}
+      <div className="max-w-325 mx-auto px-6 md:px-12 py-24 font-sans">
+        
+        {/* PROFESSIONAL EXPERIENCE SECTION */}
+        <div className="mb-16">
+          <div className="flex items-center justify-between mb-8 pb-4 border-b border-gray-200">
+            <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-black">Experience</h2>
+          </div>
+          <ExperienceList items={professionalExperiences} />
+        </div>
 
-              {/* Content */}
-              <div className="flex flex-col w-full">
-                <h3 className="text-lg font-bold text-black leading-tight">
-                  {exp.role}
-                </h3>
-                <p className="text-[15px] font-medium text-gray-800 mt-0.5">
-                  {exp.company}
-                </p>
-                <p className="text-[13px] text-gray-500 mt-0.5">
-                  {exp.date} {exp.duration && `· ${exp.duration}`}
-                </p>
-                <p className="text-[13px] text-gray-500 mt-0.5 mb-2">
-                  {exp.location}
-                </p>
-                
-                <p className="text-[14px] text-gray-600 leading-relaxed mt-1">
-                  {exp.description}
-                </p>
-              </div>
-              
-            </div>
-          ))}
+        {/* LEADERSHIP & ACTIVITIES SECTION */}
+        <div>
+          <div className="flex items-center justify-between mb-8 pb-4 border-b border-gray-200">
+            <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-black">Leadership & Activities</h2>
+          </div>
+          <ExperienceList items={leadershipRoles} />
         </div>
 
       </div>
+
+      {/* INFINITE SCROLLING COLLEGE MOMENTS GALLERY */}
+      {/* Added mt-8 to separate it cleanly from the content above */}
+      <div className="w-full bg-gray-50 py-20 border-t border-gray-200 mt-8">
+        <div className="max-w-325 mx-auto px-6 md:px-12 mb-10">
+          <h3 className="text-2xl font-black uppercase tracking-tight text-black">College Life & Activities</h3>
+          <p className="text-gray-500 text-sm mt-2">Behind the scenes, event coordination, and campus memories.</p>
+        </div>
+
+        <div className="relative flex overflow-hidden group">
+          {/* Gradient Overlays */}
+          <div className="absolute top-0 left-0 w-24 md:w-32 h-full bg-linear-to-r from-gray-50 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-24 md:w-32 h-full bg-linear-to-l from-gray-50 to-transparent z-10 pointer-events-none"></div>
+
+          {/* First Set */}
+          <div className="flex animate-scroll-left whitespace-nowrap gap-4 md:gap-6 px-2 group-hover:[animation-play-state:paused]">
+            {collegeMoments.map((src, i) => (
+              <div key={i} className="w-72 h-48 md:w-80 md:h-56 shrink-0 rounded-xl overflow-hidden border border-gray-200 bg-gray-200">
+                <img 
+                  src={src} 
+                  alt={`College Moment ${i + 1}`} 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Duplicated Set for Infinite Loop */}
+          <div className="flex animate-scroll-left whitespace-nowrap gap-4 md:gap-6 px-2 group-hover:[animation-play-state:paused]" aria-hidden="true">
+            {collegeMoments.map((src, i) => (
+              <div key={`dup-${i}`} className="w-72 h-48 md:w-80 md:h-56 shrink-0 rounded-xl overflow-hidden border border-gray-200 bg-gray-200">
+                <img 
+                  src={src} 
+                  alt={`College Moment Duplicate ${i + 1}`} 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
     </section>
   )
 }
