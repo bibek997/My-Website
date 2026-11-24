@@ -1,116 +1,95 @@
 import React from 'react'
 import { ArrowRight, FileText } from 'lucide-react'
 
+// Imports from the SAME folder
+import About from './About' 
+import Work from './Work'
+import Experience from './Experience'
+import Expertise from './Expertise'
+import Education from './Education'
+import Moments from './Moments'
+import Contact from './Contact'
+
 const Home = () => {
   return (
-    <section className="max-w-[1300px] mx-auto px-6 md:px-12 py-12 lg:py-10 font-sans">
-      
-      {/* Main Grid: Left Content (Text) & Right Content (Images) */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
-      
-        {/* LEFT COLUMN: Text Content                 */}
-        <div className="flex flex-col">
-          
-          {/* Top Status & Location */}
-          <div className="flex items-center gap-3 mb-2">
-            <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-black"></span>
-              <span className="text-[11px] sm:text-xs font-bold tracking-widest uppercase text-black">
-                Available for work
-              </span>
+    <>
+      {/* 1. HERO SECTION */}
+      <section id="home" className="max-w-325 mx-auto px-6 md:px-12 py-12 lg:py-10 font-sans">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
+          <div className="flex flex-col">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="flex items-center gap-2">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-teal-400"></span>
+                </span>
+                <span className="text-[11px] sm:text-xs font-bold tracking-widest uppercase text-black">Available for work</span>
+              </div>
+              <span className="text-gray-300 font-light text-sm">/</span>
+              <span className="text-[11px] sm:text-xs font-bold tracking-widest uppercase text-gray-400">Kathmandu, Nepal</span>
             </div>
-            <span className="text-gray-300 font-light text-sm">/</span>
-            <span className="text-[11px] sm:text-xs font-bold tracking-widest uppercase text-gray-400">
-              Kathmandu, Nepal
-            </span>
+
+            <h1 className="text-[55px] leading-[1.05] sm:text-[75px] lg:text-[85px] font-black tracking-tight text-black uppercase mb-6">
+              I BUILD THINGS FOR THE WEB<span className="text-gray-300">.</span>
+            </h1>
+
+            <p className="text-base sm:text-[17px] text-gray-600 leading-relaxed max-w-135 mb-5 font-medium">
+              I'm a frontend developer who enjoys building reliable and practical web applications. I mainly work with React, JavaScript, and modern web technologies, focusing on writing clean code and creating systems that work well.
+            </p>
+
+            <div className="flex flex-wrap items-center gap-4 mb-5">
+              <button className="flex items-center gap-2 px-6 py-3.5 bg-black text-white text-sm font-semibold rounded-sm hover:bg-gray-800 transition-colors">
+                View My Work <ArrowRight size={16} />
+              </button>
+              <button className="flex items-center gap-2 px-6 py-3.5 bg-white border border-black text-black text-sm font-semibold rounded-sm hover:bg-gray-50 transition-colors">
+                <FileText size={16} /> Download CV
+              </button>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-2 mb-5">
+              <span className="text-[10px] font-bold tracking-widest uppercase text-gray-400 mr-2">Focus:</span>
+              {['React', 'JavaScript', 'HTML', 'CSS', 'Node.js', 'Python'].map((tech) => (
+                <span key={tech} className="px-3 py-1.5 border border-gray-200 bg-white text-gray-800 text-[11px] font-bold rounded-sm">{tech}</span>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-[10px] sm:text-[11px] font-bold tracking-widest text-gray-500 uppercase">
+              <a href="https://github.com/bibek997" className="hover:text-black transition-colors">Github</a>
+              <span className="text-gray-300">•</span>
+              <a href="https://www.linkedin.com/in/hitendra-burja-magar-760240292/" className="hover:text-black transition-colors">LinkedIn</a>
+              <span className="text-gray-300">•</span>
+              <a href="https://www.instagram.com/bibek__23/" className="hover:text-black transition-colors">Instagram</a>
+              <span className="text-gray-300">•</span>
+              <a href="https://www.facebook.com/bibek.burja.9/" className="hover:text-black transition-colors">Facebook</a>
+            </div>
           </div>
 
-          {/* Huge Main Headline */}
-          <h1 className="text-[55px] leading-[1.05] sm:text-[75px] lg:text-[85px] font-black tracking-tight text-black uppercase mb-6">
-            I BUILD THINGS FOR THE WEB<span className="text-gray-300">.</span>
-          </h1>
-
-          {/* Subheading / Bio */}
-          <p className="text-base sm:text-[17px] text-gray-600 leading-relaxed max-w-[540px] mb-5 font-medium">
-            I'm a frontend developer who enjoys building reliable and practical 
-            web applications. I mainly work with React, JavaScript, and 
-            modern web technologies, focusing on writing clean code and creating systems 
-            that work well.
-          </p>
-
-          {/* Action Buttons */}
-          <div className="flex flex-wrap items-center gap-4 mb-5">
-            <button className="flex items-center gap-2 px-6 py-3.5 bg-black text-white text-sm font-semibold rounded-[4px] hover:bg-gray-800 transition-colors">
-              View My Work
-              <ArrowRight size={16} />
-            </button>
-            <button className="flex items-center gap-2 px-6 py-3.5 bg-white border border-black text-black text-sm font-semibold rounded-[4px] hover:bg-gray-50 transition-colors">
-              <FileText size={16} />
-              Download CV
-            </button>
+          <div className="relative w-full max-w-120 mx-auto lg:ml-auto flex flex-col justify-center">
+            <div className="w-full aspect-4/5 relative rounded-xl overflow-hidden bg-gray-200">
+              <img src="src\assets\bibek.webp" alt="Hitendra Burja Magar" className="w-full h-full object-cover" />
+            </div>
+            <div className="absolute top-6 -right-4 sm:-right-6 bg-white p-5 rounded-lg shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-gray-100 flex flex-col justify-center z-10">
+              <span className="text-[32px] font-black text-black leading-none mb-1">04+</span>
+              <span className="text-[9px] font-bold tracking-widest text-gray-400 uppercase">Projects Built</span>
+            </div>
+            <div className="absolute bottom-10 -left-4 sm:-left-6 bg-white p-5 rounded-lg shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-gray-100 flex flex-col justify-center z-10">
+              <span className="text-[32px] font-black text-black leading-none mb-1">02+</span>
+              <span className="text-[9px] font-bold tracking-widest text-gray-400 uppercase">Years Experience</span>
+            </div>
           </div>
-
-          {/* Tech Stack Tags */}
-          <div className="flex flex-wrap items-center gap-2 mb-5">
-            <span className="text-[10px] font-bold tracking-widest uppercase text-gray-400 mr-2">
-              Focus:
-            </span>
-            {['React', 'JavaScript', 'HTML', 'CSS', 'Node.js', 'Python'].map((tech) => (
-              <span 
-                key={tech} 
-                className="px-3 py-1.5 border border-gray-200 bg-white text-gray-800 text-[11px] font-bold rounded-[4px]"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-
-          {/* Social Links */}
-          <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-[10px] sm:text-[11px] font-bold tracking-widest text-gray-500 uppercase">
-            <a href="https://github.com/bibek997" className="hover:text-black transition-colors">Github</a>
-            <span className="text-gray-300">•</span>
-            <a href="https://www.linkedin.com/in/hitendra-burja-magar-760240292/" className="hover:text-black transition-colors">LinkedIn</a>
-            <span className="text-gray-300">•</span>
-            <a href="https://www.instagram.com/bibek__23/" className="hover:text-black transition-colors">Instagram</a>
-            <span className="text-gray-300">•</span>
-            <a href="https://www.facebook.com/bibek.burja.9/" className="hover:text-black transition-colors">Facebook</a>
-          </div>
-
         </div>
-        
-        {/* RIGHT COLUMN: Images & Floating Cards     */}
-        <div className="relative w-full max-w-[480px] mx-auto lg:ml-auto flex flex-col justify-center">
-          
-          {/* Main Portrait Image Container */}
-          {/* Using aspect-[4/5] to match the tall portrait look */}
-          <div className="w-full aspect-[4/5] relative rounded-xl overflow-hidden bg-gray-200">
-            {/* Replace the src below with your actual image */}
-            <img 
-              src="src\assets\bibek.webp" 
-              alt="Hitendra Burja Magar" 
-              className="w-full h-full object-cover"
-            />
-          </div>
+      </section>
 
-          {/* Top Right Floating Card: Projects */}
-          {/* Added z-index and specific shadows to match design */}
-          <div className="absolute top-6 -right-4 sm:-right-6 bg-white p-5 rounded-lg shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-gray-100 flex flex-col justify-center z-10">
-            <span className="text-[32px] font-black text-black leading-none mb-1">04+</span>
-            <span className="text-[9px] font-bold tracking-widest text-gray-400 uppercase">Projects Built</span>
-          </div>
+      {/* 2. OTHER SECTIONS */}
+      <About />
+      <Work />
+      <Experience />
+      <Expertise />
+      <Education />
+      <Moments />
+      <Contact />
 
-          {/* Bottom Left Floating Card: Experience */}
-          {/* Changed -bottom-6 to bottom-10 to move it higher */}
-          <div className="absolute bottom-10 -left-4 sm:-left-6 bg-white p-5 rounded-lg shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-gray-100 flex flex-col justify-center z-10">
-            <span className="text-[32px] font-black text-black leading-none mb-1">02+</span>
-            <span className="text-[9px] font-bold tracking-widest text-gray-400 uppercase">Years Experience</span>
-          </div>
-
-        </div>
-
-      </div>
-
-      {/* Floating Music/Spotify Button */}
+      {/* Floating Music Button */}
       <div className="fixed bottom-8 right-8 z-50">
         <button className="w-14 h-14 bg-black text-white rounded-full flex items-center justify-center shadow-xl hover:scale-105 transition-transform">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -120,8 +99,7 @@ const Home = () => {
           </svg>
         </button>
       </div>
-
-    </section>
+    </>
   )
 }
 
