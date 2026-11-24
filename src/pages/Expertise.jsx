@@ -84,7 +84,7 @@ const Expertise = () => {
 
             {/* JavaScript */}
             <div className="flex items-center gap-2 bg-[#323330] text-white px-4 py-2.5 rounded text-sm font-bold tracking-wide shadow-sm hover:scale-105 transition-transform cursor-default">
-              <span className="w-[18px] h-[18px] bg-[#F7DF1E] text-black flex items-center justify-center text-[10px] rounded-sm font-black">JS</span>
+              <span className="w-4.5 h-4.5 bg-[#F7DF1E] text-black flex items-center justify-center text-[10px] rounded-sm font-black">JS</span>
               JAVASCRIPT
             </div>
 
@@ -144,7 +144,7 @@ const Expertise = () => {
             
             {/* Tailwind CSS */}
             <div className="flex items-center gap-2 bg-[#0F172A] text-white px-4 py-2.5 rounded text-sm font-bold tracking-wide shadow-sm hover:scale-105 transition-transform cursor-default">
-              <span className="w-[18px] h-[18px] text-[#38BDF8] flex items-center justify-center">
+              <span className="w-4.5 h-4.5 text-[#38BDF8] flex items-center justify-center">
                 <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"/></svg>
               </span>
               TAILWIND CSS
