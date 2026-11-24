@@ -7,7 +7,7 @@ import Work from './Work'
 import Experience from './Experience'
 import Expertise from './Expertise'
 import Education from './Education'
-import Moments from './Moments'
+import Captures from './Captures'
 import Contact from './Contact'
 import MusicPlayer from '../components/MusicPlayer'
 
@@ -87,7 +87,7 @@ const Home = () => {
       <Experience />
       <Expertise />
       <Education />
-      <Moments />
+      <Captures />
       <Contact />
       <MusicPlayer />
     </>

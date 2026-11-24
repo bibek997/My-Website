@@ -21,7 +21,7 @@ const Navbar = () => {
     { id: '04', name: 'Experience', path: 'experience' },
     { id: '05', name: 'Expertise', path: 'expertise' },
     { id: '06', name: 'Education', path: 'education' },
-    { id: '07', name: 'Moments', path: 'moments', icon: <InstagramIcon /> },
+    { id: '07', name: 'Captures', path: 'captures', icon: <InstagramIcon /> },
     { id: '08', name: 'Contact', path: 'contact' },
   ]
 

@@ -152,7 +152,7 @@ const MusicPlayer = () => {
                      {index === currentTrackIndex ? (
                        // Custom Live Equalizer Icon
                        <div className="flex items-end gap-0.5 h-3">
-                         <div className="w-0.5 bg-white rounded-full animate-[music-bar_1s_ease-in-out_infinite]"></div>
+                         <div className="w-0.5 bg-white rounded-full animate-music-bar"></div>
                          <div className="w-0.5 bg-white rounded-full animate-[music-bar_1.2s_ease-in-out_infinite_0.2s] h-1.5"></div>
                          <div className="w-0.5 bg-white rounded-full animate-[music-bar_0.8s_ease-in-out_infinite_0.4s] h-2"></div>
                        </div>
