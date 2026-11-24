@@ -32,7 +32,7 @@ const Work = () => {
             Selected Work
           </h3>
           <p className="text-gray-500 font-medium max-w-2xl text-[15px]">
-            A collection of projects I've built, ranging from full-stack web applications to interactive mobile apps.
+            A collection of web applications, mobile apps, and creative graphic design projects I've built.
           </p>
         </div>
 
@@ -81,8 +81,8 @@ const Work = () => {
           </div>
         </div>
 
-        {/* Other Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* Development Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
           
           {/* Project Card 1 - BaristaArabica */}
           <div className="bg-white p-6 rounded-2xl border border-gray-200 flex flex-col hover:shadow-xl transition-all duration-300 group">
@@ -177,30 +177,104 @@ const Work = () => {
             </div>
           </div>
 
-          {/* Project Card 5 - Explore More (Fills the 5th slot) */}
+          {/* Project Card 5 - Explore More */}
           <div className="bg-gray-50 border border-gray-200 border-dashed p-6 rounded-2xl flex flex-col items-center justify-center text-center hover:bg-gray-100 transition-all duration-300 group cursor-pointer md:col-span-2 lg:col-span-2">
              <a href="https://github.com/bibek997" target="_blank" rel="noreferrer" className="flex flex-col items-center">
                 <div className="w-10 h-10 bg-white rounded-full border border-gray-200 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                   <ArrowUpRight className="text-gray-400 group-hover:text-black" size={20} />
                 </div>
-                <h4 className="text-lg font-bold text-black mb-1">Explore More</h4>
+                <h4 className="text-lg font-bold text-black mb-1">Explore More Code</h4>
                 <p className="text-gray-500 text-xs max-w-xs">Check out my GitHub repository for more open-source projects.</p>
              </a>
           </div>
-
         </div>
 
-        {/* Bottom Action Button */}
-        <div className="mt-12 flex justify-center">
-          <a 
-            href="https://github.com/bibek997" 
-            target="_blank" 
-            rel="noreferrer" 
-            className="flex items-center justify-center gap-2 px-6 py-3.5 bg-black text-white rounded-full font-bold text-sm hover:bg-gray-800 hover:-translate-y-0.5 transition-all shadow-md"
-          >
-            Explore Other Projects
-            <ArrowUpRight size={16} />
-          </a>
+        {/* --- CREATIVE WORKS SECTION --- */}
+        <div className="mt-20">
+          <div className="mb-8">
+            <h4 className="text-2xl font-bold text-black mb-2">Creative Works & Design</h4>
+            <p className="text-gray-500 font-medium text-sm max-w-2xl">
+              A selection of graphic design projects, social media campaigns, and event branding created using Canva.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+            {/* Design 1 - Sport Week */}
+            <div className="bg-white p-6 rounded-2xl border border-gray-200 flex flex-col hover:shadow-xl transition-all duration-300 group">
+              <div className="flex justify-between items-start mb-4">
+                <div className="w-10 h-10 bg-orange-50 rounded-lg border border-orange-100 flex items-center justify-center group-hover:bg-orange-600 group-hover:text-white text-orange-600 transition-colors duration-300">
+                  <span className="font-bold text-lg">🏆</span>
+                </div>
+              </div>
+              <h4 className="text-lg font-bold text-black mb-2">Sport Week</h4>
+              <p className="text-gray-500 text-sm font-medium mb-4 grow">
+                Designed banners and social media posts for campus-wide Sport Week, ensuring visual consistency and audience engagement.
+              </p>
+              <div className="flex flex-wrap gap-1.5 mb-5 mt-auto">
+                {['Canva', 'Social Media', 'Event Design'].map(tech => (
+                  <span key={tech} className="text-[9px] font-bold tracking-widest uppercase text-gray-400 border border-gray-100 px-2 py-1 rounded">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <a href="https://www.canva.com/design/DAGlBLsbNbQ/I6v2kK2EJO8dk9s5eb7iag/view?utm_content=DAGlBLsbNbQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hfa5d122630" target="_blank" rel="noreferrer" className="flex items-center justify-between w-full bg-gray-50 hover:bg-black hover:text-white text-gray-700 px-4 py-2.5 rounded-lg text-xs font-bold transition-all border border-gray-200 hover:border-black">
+                View Work
+                <ExternalLink size={14} />
+              </a>
+            </div>
+            
+            {/* Design 2 - ClockMakers */}
+            <div className="bg-white p-6 rounded-2xl border border-gray-200 flex flex-col hover:shadow-xl transition-all duration-300 group">
+              <div className="flex justify-between items-start mb-4">
+                <div className="w-10 h-10 bg-cyan-50 rounded-lg border border-cyan-100 flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white text-cyan-600 transition-colors duration-300">
+                  <span className="font-bold text-lg">⏱️</span>
+                </div>
+              </div>
+              <h4 className="text-lg font-bold text-black mb-2">ClockMakers Hackathon</h4>
+              <p className="text-gray-500 text-sm font-medium mb-4 grow">
+                Created the event backdrop and promo graphics for a 48-hour coding marathon, aligning the design with the event's tech theme.
+              </p>
+              <div className="flex flex-wrap gap-1.5 mb-5 mt-auto">
+                {['Canva', 'Backdrop', 'Promo Graphics'].map(tech => (
+                  <span key={tech} className="text-[9px] font-bold tracking-widest uppercase text-gray-400 border border-gray-100 px-2 py-1 rounded">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <a href="https://canva.link/hpscmtn1brc88zf" target="_blank" rel="noreferrer" className="flex items-center justify-between w-full bg-gray-50 hover:bg-black hover:text-white text-gray-700 px-4 py-2.5 rounded-lg text-xs font-bold transition-all border border-gray-200 hover:border-black">
+                View Work
+                <ExternalLink size={14} />
+              </a>
+            </div>
+
+          
+
+            {/* Design 3 - Pcps Graduation */}
+            <div className="bg-white p-6 rounded-2xl border border-gray-200 flex flex-col hover:shadow-xl transition-all duration-300 group">
+              <div className="flex justify-between items-start mb-4">
+                <div className="w-10 h-10 bg-indigo-50 rounded-lg border border-indigo-100 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white text-indigo-600 transition-colors duration-300">
+                  <span className="font-bold text-lg">🎓</span>
+                </div>
+              </div>
+              <h4 className="text-lg font-bold text-black mb-2">PCPS Graduation 2025</h4>
+              <p className="text-gray-500 text-sm font-medium mb-4 grow">
+                Designed a 12+ page graduation booklet maintaining theme consistency and readability for the graduating class.
+              </p>
+              <div className="flex flex-wrap gap-1.5 mb-5 mt-auto">
+                {['Canva', 'Print Design', 'Branding'].map(tech => (
+                  <span key={tech} className="text-[9px] font-bold tracking-widest uppercase text-gray-400 border border-gray-100 px-2 py-1 rounded">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <a href="https://www.canva.com/design/DAGr1FCzzXg/cYcsR-fudzTQSKuVZmYRUQ/view?utm_content=DAGr1FCzzXg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc0ad7880ff" target="_blank" rel="noreferrer" className="flex items-center justify-between w-full bg-gray-50 hover:bg-black hover:text-white text-gray-700 px-4 py-2.5 rounded-lg text-xs font-bold transition-all border border-gray-200 hover:border-black">
+                View Work
+                <ExternalLink size={14} />
+              </a>
+            </div>
+
+          </div>
         </div>
 
       </div>

@@ -47,7 +47,7 @@ const Experience = () => {
         
         {/* Section Header */}
         <div className="flex items-center justify-between mb-8 pb-4 border-b border-gray-100">
-          <h2 className="text-2xl font-bold text-black">Experience</h2>
+          <h2 className="text-4xl font-bold text-black">Experience</h2>
           <div className="flex items-center gap-3 text-gray-500">
             <button className="p-1.5 hover:bg-gray-100 rounded-md transition-colors">
               <Plus size={20} />

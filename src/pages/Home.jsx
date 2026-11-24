@@ -1,7 +1,6 @@
 import React from 'react'
 import { ArrowRight, FileText, Music } from 'lucide-react'
 
-// Imports from the SAME folder
 import About from './About' 
 import Work from './Work'
 import Experience from './Experience'
