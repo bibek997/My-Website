@@ -1,4 +1,32 @@
 @import "tailwindcss";
+
 html {
   scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar for Music Player */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+@theme {
+  --animate-music-bar: music-bar 1s ease-in-out infinite;
+
+  @keyframes music-bar {
+    0%, 100% { height: 4px; }
+    50% { height: 16px; }
+  }
 }

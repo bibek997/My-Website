@@ -1,5 +1,5 @@
 import React from 'react'
-import { ArrowRight, FileText } from 'lucide-react'
+import { ArrowRight, FileText, Music } from 'lucide-react'
 
 // Imports from the SAME folder
 import About from './About' 
@@ -9,6 +9,7 @@ import Expertise from './Expertise'
 import Education from './Education'
 import Moments from './Moments'
 import Contact from './Contact'
+import MusicPlayer from '../components/MusicPlayer'
 
 const Home = () => {
   return (
@@ -88,17 +89,7 @@ const Home = () => {
       <Education />
       <Moments />
       <Contact />
-
-      {/* Floating Music Button */}
-      <div className="fixed bottom-8 right-8 z-50">
-        <button className="w-14 h-14 bg-black text-white rounded-full flex items-center justify-center shadow-xl hover:scale-105 transition-transform">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M9 18V5l12-2v13"></path>
-            <circle cx="6" cy="18" r="3"></circle>
-            <circle cx="18" cy="16" r="3"></circle>
-          </svg>
-        </button>
-      </div>
+      <MusicPlayer />
     </>
   )
 }
