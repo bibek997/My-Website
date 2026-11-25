@@ -32,7 +32,7 @@ const Experience = () => {
     },
     {
       role: "Secondary Level Computer Teacher",
-      company: "High School",
+      company: "Triyiga Little Flower English School",
       date: "2082 - 2083-11-01",
       duration: "1 yr",
       location: "On-site",
@@ -80,7 +80,6 @@ const Experience = () => {
       {items.map((exp, index) => (
         <div 
           key={index} 
-          // Increased py-6 to py-8 and px-4 to px-6 for better breathing room
           className="flex gap-5 py-8 border-b border-gray-100 last:border-0 hover:bg-gray-50/80 transition-all duration-200 px-6 -mx-6 rounded-xl"
         >
           {/* Logo */}
@@ -109,7 +108,6 @@ const Experience = () => {
 
   return (
     <section id="experience" className="w-full border-t border-gray-100 bg-white overflow-hidden">
-      {/* Changed pt-24 pb-12 to py-24 for uniform vertical spacing */}
       <div className="max-w-325 mx-auto px-6 md:px-12 py-24 font-sans">
         
         {/* PROFESSIONAL EXPERIENCE SECTION */}
@@ -131,7 +129,6 @@ const Experience = () => {
       </div>
 
       {/* INFINITE SCROLLING COLLEGE MOMENTS GALLERY */}
-      {/* Added mt-8 to separate it cleanly from the content above */}
       <div className="w-full bg-gray-50 py-20 border-t border-gray-200 mt-8">
         <div className="max-w-325 mx-auto px-6 md:px-12 mb-10">
           <h3 className="text-2xl font-black uppercase tracking-tight text-black">College Life & Activities</h3>
@@ -146,7 +143,8 @@ const Experience = () => {
           {/* First Set */}
           <div className="flex animate-scroll-left whitespace-nowrap gap-4 md:gap-6 px-2 group-hover:[animation-play-state:paused]">
             {collegeMoments.map((src, i) => (
-              <div key={i} className="w-72 h-48 md:w-80 md:h-56 shrink-0 rounded-xl overflow-hidden border border-gray-200 bg-gray-200">
+              // Massively increased sizes here
+              <div key={i} className="w-112.5 h-80 md:w-150 md:h-100 shrink-0 rounded-xl overflow-hidden border border-gray-200 bg-gray-200">
                 <img 
                   src={src} 
                   alt={`College Moment ${i + 1}`} 
@@ -159,7 +157,8 @@ const Experience = () => {
           {/* Duplicated Set for Infinite Loop */}
           <div className="flex animate-scroll-left whitespace-nowrap gap-4 md:gap-6 px-2 group-hover:[animation-play-state:paused]" aria-hidden="true">
             {collegeMoments.map((src, i) => (
-              <div key={`dup-${i}`} className="w-72 h-48 md:w-80 md:h-56 shrink-0 rounded-xl overflow-hidden border border-gray-200 bg-gray-200">
+              // Massively increased sizes here as well
+              <div key={`dup-${i}`} className="w-112.5 h-80 md:w-150 md:h-100 shrink-0 rounded-xl overflow-hidden border border-gray-200 bg-gray-200">
                 <img 
                   src={src} 
                   alt={`College Moment Duplicate ${i + 1}`} 

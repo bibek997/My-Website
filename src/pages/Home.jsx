@@ -1,5 +1,5 @@
 import React from 'react'
-import { ArrowRight, FileText, Music } from 'lucide-react'
+import { ArrowRight, FileText } from 'lucide-react'
 
 import About from './About' 
 import Work from './Work'
@@ -11,6 +11,14 @@ import Contact from './Contact'
 import MusicPlayer from '../components/MusicPlayer'
 
 const Home = () => {
+  // Smooth scroll function for the "View My Work" button
+  const scrollToWork = () => {
+    const element = document.getElementById('work')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <>
       {/* 1. HERO SECTION */}
@@ -38,12 +46,23 @@ const Home = () => {
             </p>
 
             <div className="flex flex-wrap items-center gap-4 mb-5">
-              <button className="flex items-center gap-2 px-6 py-3.5 bg-black text-white text-sm font-semibold rounded-sm hover:bg-gray-800 transition-colors">
+              {/* View My Work Button - Added scroll onClick */}
+              <button 
+                onClick={scrollToWork}
+                className="flex items-center gap-2 px-6 py-3.5 bg-black text-white text-sm font-semibold rounded-sm hover:bg-gray-800 transition-colors cursor-pointer"
+              >
                 View My Work <ArrowRight size={16} />
               </button>
-              <button className="flex items-center gap-2 px-6 py-3.5 bg-white border border-black text-black text-sm font-semibold rounded-sm hover:bg-gray-50 transition-colors">
+              
+              {/* Download CV Button - Changed to <a> tag to open PDF */}
+              <a 
+                href="src/assets/cv/Hitendraburjamagarcv.pdf" 
+                target="_blank" 
+                rel="noreferrer"
+                className="flex items-center gap-2 px-6 py-3.5 bg-white border border-black text-black text-sm font-semibold rounded-sm hover:bg-gray-50 transition-colors"
+              >
                 <FileText size={16} /> Download CV
-              </button>
+              </a>
             </div>
 
             <div className="flex flex-wrap items-center gap-2 mb-5">
@@ -54,13 +73,13 @@ const Home = () => {
             </div>
 
             <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-[10px] sm:text-[11px] font-bold tracking-widest text-gray-500 uppercase">
-              <a href="https://github.com/bibek997" className="hover:text-black transition-colors">Github</a>
+              <a href="https://github.com/bibek997" target="_blank" rel="noreferrer" className="hover:text-black transition-colors">Github</a>
               <span className="text-gray-300">•</span>
-              <a href="https://www.linkedin.com/in/hitendra-burja-magar-760240292/" className="hover:text-black transition-colors">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/hitendra-burja-magar-760240292/" target="_blank" rel="noreferrer" className="hover:text-black transition-colors">LinkedIn</a>
               <span className="text-gray-300">•</span>
-              <a href="https://www.instagram.com/bibek__23/" className="hover:text-black transition-colors">Instagram</a>
+              <a href="https://www.instagram.com/bibek__23/" target="_blank" rel="noreferrer" className="hover:text-black transition-colors">Instagram</a>
               <span className="text-gray-300">•</span>
-              <a href="https://www.facebook.com/bibek.burja.9/" className="hover:text-black transition-colors">Facebook</a>
+              <a href="https://www.facebook.com/bibek.burja.9/" target="_blank" rel="noreferrer" className="hover:text-black transition-colors">Facebook</a>
             </div>
           </div>
 

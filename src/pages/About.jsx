@@ -55,7 +55,7 @@ const About = () => {
 
             {/* Download Resume Button */}
             <a 
-              href="#" // Add your resume PDF link here
+              href="src/assets/cv/Hitendraburjamagarcv.pdf" // Add your resume PDF link here
               target="_blank" 
               rel="noreferrer"
               className="flex items-center justify-center gap-2 w-full py-4 border-2 border-black text-black font-bold text-sm rounded-lg hover:bg-black hover:text-white transition-colors duration-300"

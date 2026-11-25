@@ -12,7 +12,7 @@ const InstagramIcon = ({ size = 14, ...props }) => (
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [scrollProgress, setScrollProgress] = useState(0) // State for the top black line
+  const [scrollProgress, setScrollProgress] = useState(0)
 
   const navItems = [
     { id: '01', name: 'Home', path: 'home' },
@@ -25,7 +25,6 @@ const Navbar = () => {
     { id: '08', name: 'Contact', path: 'contact' },
   ]
 
-  // --- SCROLL LOGIC (Only for the top progress bar now) ---
   useEffect(() => {
     const handleScroll = () => {
       const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
@@ -34,7 +33,7 @@ const Navbar = () => {
     }
 
     window.addEventListener('scroll', handleScroll)
-    handleScroll() // Run once on load
+    handleScroll() 
     
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -84,7 +83,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* DESKTOP NAV (No active section highlighting) */}
+          {/* DESKTOP NAV */}
           <div className="hidden lg:flex items-center bg-gray-50 rounded-full px-1.5 py-1.5 border border-gray-100">
             {navItems.map((item) => (
               <button
@@ -99,10 +98,16 @@ const Navbar = () => {
           </div>
 
           <div className="hidden lg:flex items-center gap-2">
-            <button className="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 text-gray-700 font-semibold text-[13px] hover:bg-gray-50 transition-colors">
+            {/* Desktop Resume Button - Changed to <a> tag */}
+            <a 
+              href="src/assets/cv/Hitendraburjamagarcv.pdf" 
+              target="_blank" 
+              rel="noreferrer"
+              className="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 text-gray-700 font-semibold text-[13px] hover:bg-gray-50 transition-colors"
+            >
               <FileText size={14} strokeWidth={2.5} />
               Resume
-            </button>
+            </a>
             <button onClick={() => scrollToSection('contact')} className="flex items-center gap-2 px-5 py-2 rounded-full bg-black text-white font-semibold text-[13px] hover:bg-gray-800 transition-colors">
               Let's Talk
               <ArrowRight size={14} strokeWidth={2.5} />
@@ -115,7 +120,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* MOBILE NAV OVERLAY (No active section highlighting) */}
+      {/* MOBILE NAV OVERLAY */}
       <div className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-60 lg:hidden transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsMobileMenuOpen(false)}></div>
       
       <div className={`fixed inset-y-0 left-0 w-full sm:w-95 bg-white z-70 transform transition-transform duration-300 ease-in-out flex flex-col lg:hidden ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
@@ -147,9 +152,15 @@ const Navbar = () => {
         
         <div className="p-5 border-t border-gray-100 flex flex-col gap-5 bg-gray-50/50">
           <div className="flex gap-2">
-            <button className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-full border border-gray-300 bg-white text-gray-900 font-semibold text-[13px] hover:bg-gray-50 transition-colors">
+            {/* Mobile Resume Button - Changed to <a> tag */}
+            <a 
+              href="/Hitendra_Resume.pdf" 
+              target="_blank" 
+              rel="noreferrer"
+              className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-full border border-gray-300 bg-white text-gray-900 font-semibold text-[13px] hover:bg-gray-50 transition-colors"
+            >
               <FileText size={14} /> Resume
-            </button>
+            </a>
             <button onClick={() => scrollToSection('contact')} className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-black text-white font-semibold text-[13px] hover:bg-gray-800 transition-colors">
               Let's Talk <ArrowRight size={14} />
             </button>
