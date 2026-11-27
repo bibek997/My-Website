@@ -10,6 +10,10 @@ import Captures from './Captures'
 import Contact from './Contact'
 import MusicPlayer from '../components/MusicPlayer'
 
+// 1. Import your images and PDF files at the top
+import profileImage from '../assets/bibek.webp'
+import myCv from '../assets/cv/Hitendraburjamagarcv.pdf'
+
 const Home = () => {
   // Smooth scroll function for the "View My Work" button
   const scrollToWork = () => {
@@ -54,9 +58,9 @@ const Home = () => {
                 View My Work <ArrowRight size={16} />
               </button>
               
-              {/* Download CV Button - Changed to <a> tag to open PDF */}
+              {/* Download CV Button - Updated to use the imported variable */}
               <a 
-                href="src/assets/cv/Hitendraburjamagarcv.pdf" 
+                href={myCv} 
                 target="_blank" 
                 rel="noreferrer"
                 className="flex items-center gap-2 px-6 py-3.5 bg-white border border-black text-black text-sm font-semibold rounded-sm hover:bg-gray-50 transition-colors"
@@ -85,7 +89,8 @@ const Home = () => {
 
           <div className="relative w-full max-w-120 mx-auto lg:ml-auto flex flex-col justify-center">
             <div className="w-full aspect-4/5 relative rounded-xl overflow-hidden bg-gray-200">
-              <img src="src\assets\bibek.webp" alt="Hitendra Burja Magar" className="w-full h-full object-cover" />
+              {/* 2. Use the imported variable for the image src */}
+              <img src={profileImage} alt="Hitendra Burja Magar" className="w-full h-full object-cover" />
             </div>
             <div className="absolute top-6 -right-4 sm:-right-6 bg-white p-5 rounded-lg shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-gray-100 flex flex-col justify-center z-10">
               <span className="text-[32px] font-black text-black leading-none mb-1">04+</span>
