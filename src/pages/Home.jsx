@@ -28,7 +28,9 @@ const Home = () => {
       {/* 1. HERO SECTION */}
       <section id="home" className="max-w-325 mx-auto px-6 md:px-12 py-12 lg:py-10 font-sans">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
-          <div className="flex flex-col">
+          
+          {/* TEXT CONTAINER: Added 'order-2' to keep it below the image on mobile */}
+          <div className="flex flex-col order-2 lg:order-1">
             <div className="flex items-center gap-3 mb-2">
               <div className="flex items-center gap-2">
                 <span className="relative flex h-2.5 w-2.5">
@@ -87,9 +89,9 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="relative w-full max-w-120 mx-auto lg:ml-auto flex flex-col justify-center">
+          {/* IMAGE CONTAINER: Added 'order-1' to push it to the top on mobile */}
+          <div className="relative w-full max-w-120 mx-auto lg:ml-auto flex flex-col justify-center order-1 lg:order-2 mb-8 lg:mb-0">
             <div className="w-full aspect-4/5 relative rounded-xl overflow-hidden bg-gray-200">
-              {/* 2. Use the imported variable for the image src */}
               <img src={profileImage} alt="Hitendra Burja Magar" className="w-full h-full object-cover" />
             </div>
             <div className="absolute top-6 -right-4 sm:-right-6 bg-white p-5 rounded-lg shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-gray-100 flex flex-col justify-center z-10">
