@@ -1,4 +1,24 @@
 import React from 'react'
+import pcpslogo from '../assets/logo/pcpsollegelogo.png'
+import tlfesLogo from '../assets/logo/tlfeslogo.png'
+
+// 1. Import all college images based on your actual folder structure
+import img1 from '../assets/college/image1.JPG'
+import img2 from '../assets/college/image2.png'
+import img3 from '../assets/college/image3.jpg'
+import img4 from '../assets/college/image4.JPG'
+import img5 from '../assets/college/image5.JPG'
+import img6 from '../assets/college/image6.png'
+import img7 from '../assets/college/image7.png'
+import img8 from '../assets/college/image8.png'
+import img9 from '../assets/college/image9.png'
+import img10 from '../assets/college/image10.jpg'
+import img11 from '../assets/college/image11.JPG'
+import img12 from '../assets/college/image12.JPG'
+import img13 from '../assets/college/image13.JPG'
+import img14 from '../assets/college/image14.jpg'
+import img15 from '../assets/college/image15.jpg'
+import img16 from '../assets/college/image16.jpg'
 
 const Experience = () => {
   // 1. Professional Experience Data
@@ -10,7 +30,7 @@ const Experience = () => {
       duration: "",
       location: "Lalitpur District, Nepal",
       description: "Designed promotional materials, social media graphics, and event posters for college campaigns. Collaborated with the marketing team to maintain brand consistency across digital platforms.",
-      logo: "src/assets/pcpsollegelogo.png", 
+      logo: pcpslogo, 
     },
     {
       role: "Administrative Intern",
@@ -19,7 +39,7 @@ const Experience = () => {
       duration: "3 mos",
       location: "On-site",
       description: "Assisted in daily administrative operations, managed student records, and supported the coordination of academic events and schedules.",
-      logo: "src/assets/pcpsollegelogo.png",
+      logo: pcpslogo,
     },
     {
       role: "Junior Software Developer",
@@ -28,7 +48,7 @@ const Experience = () => {
       duration: "4 mos",
       location: "On-site",
       description: "Developed and maintained responsive web interfaces using React.js. Collaborated with the design team to implement UI/UX improvements and optimized component rendering.",
-      logo: "src/assets/pcpsollegelogo.png",
+      logo: pcpslogo,
     },
     {
       role: "Secondary Level Computer Teacher",
@@ -37,7 +57,7 @@ const Experience = () => {
       duration: "1 yr",
       location: "On-site",
       description: "Instructed secondary level students in computer science fundamentals, covering basic programming logic, web development, and essential software applications.",
-      logo: "src/assets/schoollogo.png",
+      logo: tlfesLogo,
     },
   ]
 
@@ -50,28 +70,16 @@ const Experience = () => {
       duration: "",
       location: "Lalitpur District, Nepal",
       description: "Led the club's creative team, organized major college events (including ClockMakers with 50+ participants), and managed music and art activities across the campus.",
-      logo: "src/assets/pcpsollegelogo.png",
+      logo: pcpslogo,
     },
   ]
 
-  // 3. Image Array for Gallery
+  // 3. Image Array for Gallery - Updated to use the imported variables
   const collegeMoments = [
-    "src/assets/college/1-283.JPG",
-    "src/assets/college/annualday.png",
-    "src/assets/college/chinesenewyear.jpg",
-    "src/assets/college/DSCN4027.JPG",
-    "src/assets/college/DSCN5564.JPG",
-    "src/assets/college/holi.png",
-    "src/assets/college/holi2.png",
-    "src/assets/college/image copy.png",
-    "src/assets/college/image.png",
-    "src/assets/college/IMG_0828.jpg",
-    "src/assets/college/IMG_2911.JPG",
-    "src/assets/college/IMG_3167.JPG",
-    "src/assets/college/IMG_4044.JPG",
-    "src/assets/college/IMG_20230726_182755.jpg",
-    "src/assets/college/IMG-20250204-WA0008.jpg",
-    "src/assets/college/IMG-20250313-WA0126.jpg",
+    img1, img2, img3, img4, 
+    img5, img6, img7, img8, 
+    img9, img10, img11, img12, 
+    img13, img14, img15, img16
   ]
 
   // Reusable component for rendering the list
@@ -143,7 +151,6 @@ const Experience = () => {
           {/* First Set */}
           <div className="flex animate-scroll-left whitespace-nowrap gap-4 md:gap-6 px-2 group-hover:[animation-play-state:paused]">
             {collegeMoments.map((src, i) => (
-              // Massively increased sizes here
               <div key={i} className="w-112.5 h-80 md:w-150 md:h-100 shrink-0 rounded-xl overflow-hidden border border-gray-200 bg-gray-200">
                 <img 
                   src={src} 
@@ -157,7 +164,6 @@ const Experience = () => {
           {/* Duplicated Set for Infinite Loop */}
           <div className="flex animate-scroll-left whitespace-nowrap gap-4 md:gap-6 px-2 group-hover:[animation-play-state:paused]" aria-hidden="true">
             {collegeMoments.map((src, i) => (
-              // Massively increased sizes here as well
               <div key={`dup-${i}`} className="w-112.5 h-80 md:w-150 md:h-100 shrink-0 rounded-xl overflow-hidden border border-gray-200 bg-gray-200">
                 <img 
                   src={src} 

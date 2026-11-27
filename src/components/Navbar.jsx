@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { FileText, ArrowRight, Menu, X } from 'lucide-react'
+import myCv from '../assets/cv/Hitendraburjamagarcv.pdf'
 
 // --- CUSTOM INSTAGRAM ICON ---
 const InstagramIcon = ({ size = 14, ...props }) => (
@@ -100,8 +101,8 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center gap-2">
             {/* Desktop Resume Button - Changed to <a> tag */}
             <a 
-              href="src/assets/cv/Hitendraburjamagarcv.pdf" 
-              target="_blank" 
+              href={myCv}
+              target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 text-gray-700 font-semibold text-[13px] hover:bg-gray-50 transition-colors"
             >
@@ -154,8 +155,8 @@ const Navbar = () => {
           <div className="flex gap-2">
             {/* Mobile Resume Button - Changed to <a> tag */}
             <a 
-              href="/Hitendra_Resume.pdf" 
-              target="_blank" 
+              href={myCv}
+              target="_blank"
               rel="noreferrer"
               className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-full border border-gray-300 bg-white text-gray-900 font-semibold text-[13px] hover:bg-gray-50 transition-colors"
             >
