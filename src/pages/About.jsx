@@ -1,5 +1,7 @@
 import React from 'react'
 import { Download, MapPin, GraduationCap, Briefcase, Code2, Layers, ShieldCheck, Zap } from 'lucide-react'
+import profileImage from '../assets/Untitled.png'
+import myCv from '../assets/cv/Hitendraburjamagarcv.pdf'
 
 const About = () => {
   return (
@@ -14,7 +16,7 @@ const About = () => {
             {/* Main Image Container */}
             <div className="relative w-full aspect-4/5 rounded-xl overflow-hidden bg-gray-200 border border-gray-200">
               <img 
-                src="src/assets/Untitled.png" 
+                src={profileImage} 
                 alt="Hitendra Burja Magar" 
                 className="w-full h-full object-cover"
               />
@@ -55,7 +57,7 @@ const About = () => {
 
             {/* Download Resume Button */}
             <a 
-              href="src/assets/cv/Hitendraburjamagarcv.pdf" // Add your resume PDF link here
+              href= {myCv} // Add your resume PDF link here
               target="_blank" 
               rel="noreferrer"
               className="flex items-center justify-center gap-2 w-full py-4 border-2 border-black text-black font-bold text-sm rounded-lg hover:bg-black hover:text-white transition-colors duration-300"
