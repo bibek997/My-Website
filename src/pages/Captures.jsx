@@ -22,7 +22,7 @@ const Captures = () => {
     { src: "src/assets/flower.JPG", alt: "Flower" },
     { src: "src/assets/travel.JPG", alt: "Travel" },
     { src: "src/assets/graduation.JPG", alt: "Graduation" },
-    { src: "src/assets/thekiss.JPG", alt: "The Kiss" },
+    { src: "src/assets/latika.JPG", alt: "Latika" },
     { src: "src/assets/cat.JPG", alt: "The Cat" },
   ]
 

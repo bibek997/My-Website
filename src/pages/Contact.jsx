@@ -1,9 +1,39 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import { Mail, MapPin, ArrowUpRight, Phone } from 'lucide-react'
+import emailjs from '@emailjs/browser'
 
 const Contact = () => {
+  const form = useRef()
+  const [isSending, setIsSending] = useState(false)
+  const [status, setStatus] = useState(null)
+
+  const sendEmail = (e) => {
+    e.preventDefault()
+    setIsSending(true)
+    setStatus(null)
+
+    // --- ACTUAL KEYS
+    emailjs.sendForm(
+      'service_hp09wnj',            // 1. Service ID 
+      'template_62y2k8f',           // 2. TEMPLATE ID HERE
+      form.current, 
+      's5Z5HTbG-N0VXbB_7'             // 3.PUBLIC KEY HERE
+    )
+      // -----------------------------------------------------
+      .then((result) => {
+          console.log(result.text)
+          setStatus('success')
+          form.current.reset()
+      }, (error) => {
+          console.log(error.text)
+          setStatus('error')
+      })
+      .finally(() => {
+          setIsSending(false)
+      })
+  }
+
   return (
-    // Changed background to pitch black to start the dark section
     <section id="contact" className="w-full bg-[#0a0a0a] border-t border-[#222]">
       <div className="max-w-325 mx-auto px-6 md:px-12 py-24 lg:py-32 font-sans">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -25,8 +55,12 @@ const Contact = () => {
 
             {/* Contact Details */}
             <div className="flex flex-col gap-6">
-              {/* Email */}
-              <a href="mailto:hitendraburjamagar@gmail.com" className="group flex items-center gap-4 text-gray-300 hover:text-white transition-colors">
+              <a 
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=hitendraburjamagar@gmail.com" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="group flex items-center gap-4 text-gray-300 hover:text-white transition-colors"
+              >
                 <div className="w-12 h-12 bg-[#1a1a1a] border border-[#333] rounded-full flex items-center justify-center group-hover:bg-[#222] transition-colors">
                   <Mail size={20} />
                 </div>
@@ -36,7 +70,6 @@ const Contact = () => {
                 </div>
               </a>
 
-              {/* Phone */}
               <a href="tel:+9779849723178" className="group flex items-center gap-4 text-gray-300 hover:text-white transition-colors">
                 <div className="w-12 h-12 bg-[#1a1a1a] border border-[#333] rounded-full flex items-center justify-center group-hover:bg-[#222] transition-colors">
                   <Phone size={20} />
@@ -47,7 +80,6 @@ const Contact = () => {
                 </div>
               </a>
 
-              {/* Location */}
               <div className="group flex items-center gap-4 text-gray-300">
                 <div className="w-12 h-12 bg-[#1a1a1a] border border-[#333] rounded-full flex items-center justify-center">
                   <MapPin size={20} />
@@ -62,14 +94,16 @@ const Contact = () => {
 
           {/* Right Side: Contact Form */}
           <div className="bg-[#121212] p-8 sm:p-10 rounded-2xl border border-[#222]">
-            <form className="flex flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
+            <form ref={form} className="flex flex-col gap-5" onSubmit={sendEmail}>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="flex flex-col gap-2">
                   <label className="text-[11px] font-bold tracking-widest uppercase text-gray-400">Name</label>
                   <input 
                     type="text" 
+                    name="name" 
                     placeholder="John Doe" 
+                    required
                     className="w-full px-4 py-3.5 bg-[#0a0a0a] border border-[#333] rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all text-sm text-white placeholder-gray-600" 
                   />
                 </div>
@@ -77,7 +111,9 @@ const Contact = () => {
                   <label className="text-[11px] font-bold tracking-widest uppercase text-gray-400">Email</label>
                   <input 
                     type="email" 
+                    name="email" 
                     placeholder="john@example.com" 
+                    required
                     className="w-full px-4 py-3.5 bg-[#0a0a0a] border border-[#333] rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all text-sm text-white placeholder-gray-600" 
                   />
                 </div>
@@ -87,7 +123,9 @@ const Contact = () => {
                 <label className="text-[11px] font-bold tracking-widest uppercase text-gray-400">Subject</label>
                 <input 
                   type="text" 
+                  name="subject" 
                   placeholder="Project Inquiry" 
+                  required
                   className="w-full px-4 py-3.5 bg-[#0a0a0a] border border-[#333] rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all text-sm text-white placeholder-gray-600" 
                 />
               </div>
@@ -95,17 +133,27 @@ const Contact = () => {
               <div className="flex flex-col gap-2">
                 <label className="text-[11px] font-bold tracking-widest uppercase text-gray-400">Message</label>
                 <textarea 
+                  name="message" 
                   rows="5" 
                   placeholder="Tell me about your project..." 
+                  required
                   className="w-full px-4 py-3.5 bg-[#0a0a0a] border border-[#333] rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all text-sm text-white placeholder-gray-600 resize-none"
                 ></textarea>
               </div>
 
+              {status === 'success' && (
+                <p className="text-green-500 text-sm font-medium text-center">Message sent successfully! I'll get back to you soon.</p>
+              )}
+              {status === 'error' && (
+                <p className="text-red-500 text-sm font-medium text-center">Something went wrong. Please try again or email me directly.</p>
+              )}
+
               <button 
                 type="submit" 
-                className="mt-2 w-full flex items-center justify-center gap-2 px-6 py-4 bg-white text-black text-sm font-bold rounded-lg hover:bg-gray-200 transition-colors"
+                disabled={isSending}
+                className="mt-2 w-full flex items-center justify-center gap-2 px-6 py-4 bg-white text-black text-sm font-bold rounded-lg hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message <ArrowUpRight size={16} />
+                {isSending ? 'Sending...' : 'Send Message'} <ArrowUpRight size={16} />
               </button>
             </form>
           </div>
