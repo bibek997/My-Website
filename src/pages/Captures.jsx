@@ -2,50 +2,50 @@ import React, { useState, useEffect } from 'react'
 import { X, ChevronLeft, ChevronRight, Copy, Download, ExternalLink } from 'lucide-react'
 
 // 1. Import all images at the top so Vite processes them correctly
-import imgCloud from '../assets/cloud.JPG';
-import imgMoon from '../assets/moon.JPG';
-import imgNightsky from '../assets/nightsky.JPG';
-import imgHand from '../assets/hand.JPG';
-import imgDharaha from '../assets/dharaha.JPG';
-import imgBoudha from '../assets/boudha.JPG';
-import imgGaight from '../assets/gaight.JPG';
-import imgPool from '../assets/pool.JPG';
-import imgDog from '../assets/dog.JPG';
-import imgDate from '../assets/date.jpg';
-import imgNight from '../assets/night.JPG';
-import imgPlane from '../assets/plane.JPG';
-import imgKhusiban from '../assets/khusiban.JPG';
-import imgCampus from '../assets/IMG_8439.JPG';
-import imgMe from '../assets/me.JPG';
-import imgFlower from '../assets/flower.JPG';
-import imgTravel from '../assets/travel.JPG';
-import imgGraduation from '../assets/graduation.JPG';
-import imgLatika from '../assets/latika.JPG';
-import imgCat from '../assets/IMG_8644.jpg';
+import image1 from '../assets/captures/image1.jpg'
+import image2 from '../assets/captures/image2.jpg'
+import image3 from '../assets/captures/image3.jpg'
+import image4 from '../assets/captures/image4.jpg'
+import image5 from '../assets/captures/image5.jpg'
+import image6 from '../assets/captures/image6.jpg'
+import image7 from '../assets/captures/image7.jpg'
+import image8 from '../assets/captures/image8.jpg'
+import image9 from '../assets/captures/image9.jpg'
+import image10 from '../assets/captures/image10.jpg'
+import image11 from '../assets/captures/image11.jpg'
+import image12 from '../assets/captures/image12.jpg'
+import image13 from '../assets/captures/image13.jpg'
+import image14 from '../assets/captures/image14.jpg'
+import image15 from '../assets/captures/image15.jpg'
+import image16 from '../assets/captures/image16.jpg'
+import image17 from '../assets/captures/image17.jpg'
+import image18 from '../assets/captures/image18.jpg'
+import image19 from '../assets/captures/image19.jpg'
+import image20 from '../assets/captures/image20.jpg'
 
 const Captures = () => {
   // 2. Use the imported variables in your images array
   const images = [
-    { src: imgCloud, alt: "image 1" },
-    { src: imgMoon, alt: "image 2" },
-    { src: imgNightsky, alt: "image 3" },
-    { src: imgHand, alt: "image 4" },
-    { src: imgDharaha, alt: "image 5" },
-    { src: imgBoudha, alt: "image 6" },
-    { src: imgGaight, alt: "image 7" },
-    { src: imgPool, alt: "image 8" },
-    { src: imgDog, alt: "image 9" },
-    { src: imgDate, alt: "image 10" },
-    { src: imgNight, alt: "image 11" },
-    { src: imgPlane, alt: "image 12" },
-    { src: imgKhusiban, alt: "image 13" },
-    { src: imgCampus, alt: "image 14" },
-    { src: imgMe, alt: "image 15" },
-    { src: imgFlower, alt: "image 16" },
-    { src: imgTravel, alt: "image 17" },
-    { src: imgGraduation, alt: "image 18" },
-    { src: imgLatika, alt: "image 19" },
-    { src: imgCat, alt: "image 20" },
+    { src: image1, alt: "image 1" },
+    { src: image2, alt: "image 2" },
+    { src: image3, alt: "image 3" },
+    { src: image4, alt: "image 4" },
+    { src: image5, alt: "image 5" },
+    { src: image6, alt: "image 6" },
+    { src: image7, alt: "image 7" },
+    { src: image8, alt: "image 8" },
+    { src: image9, alt: "image 9" },
+    { src: image10, alt: "image 10" },
+    { src: image11, alt: "image 11" },
+    { src: image12, alt: "image 12" },
+    { src: image13, alt: "image 13" },
+    { src: image14, alt: "image 14" },
+    { src: image15, alt: "image 15" },
+    { src: image16, alt: "image 16" },
+    { src: image17, alt: "image 17" },
+    { src: image18, alt: "image 18" },
+    { src: image19, alt: "image 19" },
+    { src: image20, alt: "image 20" },
   ]
 
   // 3. State for the Lightbox
