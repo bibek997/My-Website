@@ -53,7 +53,7 @@ html {
   }
 
   /* NEW Infinite Scrolling Animation for Experience Pictures */
-  --animate-scroll-left: scroll-left 30s linear infinite;
+  --animate-scroll-left: scroll-left 60s linear infinite;
 
   @keyframes scroll-left {
     0% { transform: translateX(0); }
