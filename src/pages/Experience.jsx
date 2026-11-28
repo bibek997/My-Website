@@ -3,22 +3,27 @@ import pcpslogo from '../assets/logo/pcpsollegelogo.png'
 import tlfesLogo from '../assets/logo/tlfeslogo.png'
 
 // 1. Import all college images based on your actual folder structure
-import img1 from '../assets/college/image1.JPG'
-import img2 from '../assets/college/image2.png'
+import img1 from '../assets/college/image1.jpg'
+import img2 from '../assets/college/image2.jpg'
 import img3 from '../assets/college/image3.jpg'
-import img4 from '../assets/college/image4.JPG'
-import img5 from '../assets/college/image5.JPG'
-import img6 from '../assets/college/image6.png'
-import img7 from '../assets/college/image7.png'
-import img8 from '../assets/college/image8.png'
-import img9 from '../assets/college/image9.png'
+import img4 from '../assets/college/image4.jpg'
+import img5 from '../assets/college/image5.jpg'
+import img6 from '../assets/college/image6.jpg'
+import img7 from '../assets/college/image7.jpg'
+import img8 from '../assets/college/image8.jpg'
+import img9 from '../assets/college/image9.jpg'
 import img10 from '../assets/college/image10.jpg'
-import img11 from '../assets/college/image11.JPG'
-import img12 from '../assets/college/image12.JPG'
-import img13 from '../assets/college/image13.JPG'
+import img11 from '../assets/college/image11.jpg'
+import img12 from '../assets/college/image12.jpg'
+import img13 from '../assets/college/image13.jpg'
 import img14 from '../assets/college/image14.jpg'
 import img15 from '../assets/college/image15.jpg'
 import img16 from '../assets/college/image16.jpg'
+import img17 from '../assets/college/image17.jpg'
+import img18 from '../assets/college/image18.jpg'
+import img19 from '../assets/college/image19.jpg'
+import img20 from '../assets/college/image20.jpg'
+
 
 const Experience = () => {
   // 1. Professional Experience Data
@@ -79,7 +84,8 @@ const Experience = () => {
     img1, img2, img3, img4, 
     img5, img6, img7, img8, 
     img9, img10, img11, img12, 
-    img13, img14, img15, img16
+    img13, img14, img15, img16,
+    img17, img18, img19, img20
   ]
 
   // Reusable component for rendering the list
